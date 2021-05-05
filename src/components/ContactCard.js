@@ -1,6 +1,6 @@
 import user from "../images/user.png";
 
-const ContactCard = ({contact, erasedContactIdHandler}) => {
+const ContactCard = ({ contact, erasedContactIdHandler }) => {
   const { id, name, email } = contact;
   return (
     <div className="item" style={{ display: "flex", alignItems: "center" }}>
