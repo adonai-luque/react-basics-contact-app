@@ -1,13 +1,13 @@
 import ContactCard from "./ContactCard";
 
-const ContactList = (props) => {
+const ContactList = ({ contacts, removeContactHandler }) => {
   const erasedContactIdHandler = (id) => {
-    props.removeContactHandler(id);
+    removeContactHandler(id);
   };
 
   return (
     <div className="ui celled list">
-      {props.contacts.map((contact) => {
+      {contacts.map((contact) => {
         return (
           <ContactCard
             contact={contact}

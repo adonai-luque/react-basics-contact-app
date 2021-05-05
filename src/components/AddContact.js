@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const AddContact = (props) => {
+const AddContact = ({ addContactHandler }) => {
   const add = (e) => {
     e.preventDefault();
     if (contact.name === "" || contact.name === "") {
       alert("All the fields are required");
       return;
     }
-    props.addContactHandler(contact);
+    addContactHandler(contact);
     setContact({ name: "", email: "" });
   }
   const [contact, setContact] = useState({ name: "", email: "" })
@@ -22,7 +22,7 @@ const AddContact = (props) => {
             name="name"
             placeholder="Name"
             value={contact.name}
-            onChange={(e) => setContact({ name: e.target.value, email: contact.email })}
+            onChange={(e) => setContact({ ...contact, name: e.target.value })}
           />
         </div>
         <div className="field">
@@ -32,7 +32,7 @@ const AddContact = (props) => {
             name="email"
             placeholder="Email"
             value={contact.email}
-            onChange={(e) => setContact({ name: contact.name, email: e.target.value })}
+            onChange={(e) => setContact({ ...contact, email: e.target.value })}
           />
         </div>
         <button className="ui button blue">Add</button>
@@ -40,6 +40,9 @@ const AddContact = (props) => {
     </div>
   );
 }
+
+// AddContact as Class Component
+
 // class AddContact extends React.Component {
 //   state = {
 //     name: "",
