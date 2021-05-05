@@ -3,7 +3,6 @@ import { useState } from "react";
 const AddContact = (props) => {
   const add = (e) => {
     e.preventDefault();
-    console.log(contact);
     if (contact.name === "" || contact.name === "") {
       alert("All the fields are required");
       return;
