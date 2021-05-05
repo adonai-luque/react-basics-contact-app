@@ -11,7 +11,7 @@ const ContactCard = ({ contact, erasedContactIdHandler }) => {
       </div>
       <i
         className="trash alternate outline icon right aligned"
-        style={{ color: "red", marginLeft: "auto" }}
+        style={{ color: "red", marginLeft: "auto", cursor: "pointer" }}
         onClick={() => erasedContactIdHandler(id)}
       />
     </div>
