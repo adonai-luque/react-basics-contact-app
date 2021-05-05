@@ -9,8 +9,8 @@ const AddContact = ({ addContactHandler }) => {
     }
     addContactHandler(contact);
     setContact({ name: "", email: "" });
-  }
-  const [contact, setContact] = useState({ name: "", email: "" })
+  };
+  const [contact, setContact] = useState({ name: "", email: "" });
   return (
     <div className="ui main">
       <h2>Add Contact</h2>
@@ -39,7 +39,7 @@ const AddContact = ({ addContactHandler }) => {
       </form>
     </div>
   );
-}
+};
 
 // AddContact as Class Component
 
