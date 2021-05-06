@@ -4,7 +4,7 @@ const AddContact = ({ addContactHandler }) => {
   const add = (e) => {
     e.preventDefault();
     if (contact.name === "" || contact.name === "") {
-      alert("All the fields are required");
+      alert("Name and email must be provided");
       return;
     }
     addContactHandler(contact);
