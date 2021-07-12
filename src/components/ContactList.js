@@ -1,13 +1,13 @@
 import ContactCard from "./ContactCard";
 
-export default function ContactList(props) {
+export default function ContactList({contacts, removeContactHandler}) {
   return (
     <div className="ui celled list">
-      {props.contacts.map((contact) => {
+      {contacts.map((contact) => {
         return (
           <ContactCard
             contact={contact}
-            removeContactHandler={() => props.removeContactHandler(contact.id)}
+            removeContactHandler={() => removeContactHandler(contact.id)}
             key={contact.id}
           />
         );
