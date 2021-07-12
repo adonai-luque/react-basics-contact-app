@@ -1,92 +1,50 @@
 import { useState } from "react";
 
-const AddContact = ({ addContactHandler }) => {
-  const add = (e) => {
+export default function AddContact({ addContactHandler }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  function addNewContact(e) {
     e.preventDefault();
-    if (contact.name === "" || contact.name === "") {
-      alert("Name and email must be provided");
-      return;
+    if (name && email) {
+      addContactHandler({name: name, email: email})
+      setName("")
+      setEmail("")
+      return
     }
-    addContactHandler(contact);
-    setContact({ name: "", email: "" });
-  };
-  const [contact, setContact] = useState({ name: "", email: "" });
+    alert("Name and Email are required");
+  }
+
   return (
     <div className="ui main">
       <h2>Add Contact</h2>
-      <form className="ui form" onSubmit={add}>
+      <form
+        action=""
+        className="ui form"
+        onSubmit={addNewContact}
+      >
         <div className="field">
           <label>Name</label>
           <input
             type="text"
             name="name"
-            placeholder="Name"
-            value={contact.name}
-            onChange={(e) => setContact({ ...contact, name: e.target.value })}
+            placeholder="Enter your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className="field">
-          <label>Email</label>
+          <label>E-mail</label>
           <input
             type="text"
-            name="email"
-            placeholder="Email"
-            value={contact.email}
-            onChange={(e) => setContact({ ...contact, email: e.target.value })}
+            name="name"
+            placeholder="Enter your e-mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <button className="ui button blue">Add</button>
       </form>
     </div>
   );
-};
-
-// AddContact as Class Component
-
-// class AddContact extends React.Component {
-//   state = {
-//     name: "",
-//     email: "",
-//   };
-//   add = (e) => {
-//     e.preventDefault();
-//     if (this.state.name === "" || this.state.name === "") {
-//       alert("All the fields are required");
-//       return;
-//     }
-//     this.props.addContactHandler(this.state);
-//     this.setState({ name: "", email: "" });
-//   };
-//   render() {
-//     return (
-//       <div className="ui main">
-//         <h2>Add Contact</h2>
-//         <form className="ui form" onSubmit={this.add}>
-//           <div className="field">
-//             <label>Name</label>
-//             <input
-//               type="text"
-//               name="name"
-//               placeholder="Name"
-//               value={this.state.name}
-//               onChange={(e) => this.setState({ name: e.target.value })}
-//             />
-//           </div>
-//           <div className="field">
-//             <label>Email</label>
-//             <input
-//               type="text"
-//               name="email"
-//               placeholder="Email"
-//               value={this.state.email}
-//               onChange={(e) => this.setState({ email: e.target.value })}
-//             />
-//           </div>
-//           <button className="ui button blue">Add</button>
-//         </form>
-//       </div>
-//     );
-//   }
-// }
-
-export default AddContact;
+}

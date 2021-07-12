@@ -1,17 +1,9 @@
-const Header = () => {
+export default function Header() {
   return (
-    <div
-      className="ui menu"
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "4rem",
-      }}
-    >
-      <h2>Contact Manager</h2>
+    <div className="ui fixed menu">
+      <div className="ui container center">
+        <h2>Contact Manager</h2>
+      </div>
     </div>
-  );
+  )
 };
-
-export default Header;
