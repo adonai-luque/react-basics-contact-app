@@ -10,9 +10,7 @@ export default function App() {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    const retrievedContacts = JSON.parse(
-      localStorage.getItem(LOCAL_STORAGE_KEY)
-    );
+    const retrievedContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (retrievedContacts) setContacts(retrievedContacts);
   }, []);
 
@@ -33,10 +31,7 @@ export default function App() {
     <div className="ui container">
       <Header />
       <AddContact addContactHandler={addContactHandler} />
-      <ContactList
-        contacts={contacts}
-        removeContactHandler={removeContactHandler}
-      />
+      <ContactList contacts={contacts} removeContactHandler={removeContactHandler} />
     </div>
   );
 }
