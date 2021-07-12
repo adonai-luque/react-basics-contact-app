@@ -5,5 +5,5 @@ export default function Header() {
         <h2>Contact Manager</h2>
       </div>
     </div>
-  )
-};
+  );
+}

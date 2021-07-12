@@ -7,10 +7,10 @@ export default function AddContact({ addContactHandler }) {
   function addNewContact(e) {
     e.preventDefault();
     if (name && email) {
-      addContactHandler({name: name, email: email})
-      setName("")
-      setEmail("")
-      return
+      addContactHandler({ name: name, email: email });
+      setName("");
+      setEmail("");
+      return;
     }
     alert("Name and Email are required");
   }
@@ -18,11 +18,7 @@ export default function AddContact({ addContactHandler }) {
   return (
     <div className="ui main">
       <h2>Add Contact</h2>
-      <form
-        action=""
-        className="ui form"
-        onSubmit={addNewContact}
-      >
+      <form action="" className="ui form" onSubmit={addNewContact}>
         <div className="field">
           <label>Name</label>
           <input
