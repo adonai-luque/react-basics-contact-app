@@ -2,6 +2,17 @@
   margin-top: 5em;
 }
 
+.main .header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .center {
   justify-content: center;
   padding: 10px;

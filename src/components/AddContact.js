@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function AddContact({ addContactHandler }) {
+export default function AddContact({ addContactHandler, history }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
@@ -10,6 +10,7 @@ export default function AddContact({ addContactHandler }) {
       addContactHandler({ name: name, email: email });
       setName("");
       setEmail("");
+      history.push("/");
       return;
     }
     alert("Name and Email are required");
