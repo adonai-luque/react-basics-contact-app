@@ -7,7 +7,9 @@ export default function ContactList({ contacts, removeContactHandler }) {
         return (
           <ContactCard
             contact={contact}
-            removeContactHandler={() => removeContactHandler(contact.id)}
+            removeContactHandler={function () {
+              removeContactHandler(contact.id);
+            }}
             key={contact.id}
           />
         );
