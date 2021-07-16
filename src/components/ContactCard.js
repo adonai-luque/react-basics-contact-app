@@ -1,4 +1,5 @@
 import user from "../images/user.png";
+import { Link } from "react-router-dom";
 
 export default function ContactCard({
   contact,
@@ -9,8 +10,15 @@ export default function ContactCard({
     <div className="ui item center">
       <img src={user} alt="User avatar" className="ui avatar image" />
       <div className="content">
-        <div className="header">{contact.name}</div>
-        <div>{contact.email}</div>
+        <Link
+          to={{
+            pathname: `/contacts/${contact.id}`,
+            state: {contact: contact},
+          }}
+        >
+          <div className="header">{contact.name}</div>
+          <div>{contact.email}</div>
+        </Link>
       </div>
       <i
         className="trash alternate outline icon red"

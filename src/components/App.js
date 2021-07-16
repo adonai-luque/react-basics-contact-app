@@ -6,6 +6,7 @@ import "../stylesheets/App.css";
 import Header from "./Header";
 import AddContact from "./AddContact";
 import ContactList from "./ContactList";
+import ContactDetail from "./ContactDetail";
 
 export default function App() {
   const LOCAL_STORAGE_KEY = "contacts";
@@ -53,6 +54,7 @@ export default function App() {
               <AddContact {...props} addContactHandler={addContactHandler} />
             )}
           />
+          <Route path="/contacts/:id" render={(props) => <ContactDetail {...props} />} />
         </Switch>
       </Router>
     </div>
