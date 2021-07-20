@@ -5,6 +5,7 @@ import api from "../api/contacts";
 import "../stylesheets/App.css";
 import Header from "./Header";
 import AddContact from "./AddContact";
+import EditContact from "./EditContact";
 import ContactList from "./ContactList";
 import ContactDetail from "./ContactDetail";
 
@@ -37,6 +38,12 @@ export default function App() {
     setContacts(filteredContacts);
   }
 
+  async function updateContactHandler(updatedContact) {
+    await api.put(`/contacts/${updatedContact.id}`, updatedContact);
+    let updatedContacts = contacts.map((contact) => (contact.id === updatedContact.id) ? updatedContact : contact );
+    setContacts(updatedContacts);
+  }
+
   return (
     <div className="ui container">
       <Router>
@@ -57,6 +64,12 @@ export default function App() {
             path="/add"
             render={(props) => (
               <AddContact {...props} addContactHandler={addContactHandler} />
+            )}
+          />
+          <Route
+            path="/edit"
+            render={(props) => (
+              <EditContact {...props} updateContactHandler={updateContactHandler} />
             )}
           />
           <Route

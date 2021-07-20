@@ -13,7 +13,7 @@ export default function ContactCard({
         <Link
           to={{
             pathname: `/contacts/${contact.id}`,
-            state: {contact: contact},
+            state: { contact: contact },
           }}
         >
           <div className="header">{contact.name}</div>
@@ -25,6 +25,17 @@ export default function ContactCard({
         style={{ marginTop: "8px" }}
         onClick={removeContactHandler}
       ></i>
+      <Link
+        to={{
+          pathname: "/edit",
+          state: { contact: contact },
+        }}
+      >
+        <i
+          className="edit alternate outline icon blue"
+          style={{ marginTop: "8px", marginRight: "4px" }}
+        ></i>
+      </Link>
     </div>
   );
 }
