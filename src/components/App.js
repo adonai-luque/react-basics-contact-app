@@ -24,7 +24,6 @@ export default function App() {
       if (allContacts) setContacts(allContacts);
     }
     getAllContacts();
-    console.log("Getting contacts from API");
   }, []);
 
   async function addContactHandler(newContact) {
@@ -39,8 +38,13 @@ export default function App() {
   }
 
   async function updateContactHandler(updatedContact) {
-    await api.put(`/contacts/${updatedContact.id}`, updatedContact);
-    let updatedContacts = contacts.map((contact) => (contact.id === updatedContact.id) ? updatedContact : contact );
+    const response = await api.put(
+      `/contacts/${updatedContact.id}`,
+      updatedContact
+    );
+    let updatedContacts = contacts.map((contact) =>
+      contact.id === response.data.id ? response.data : contact
+    );
     setContacts(updatedContacts);
   }
 
@@ -69,7 +73,10 @@ export default function App() {
           <Route
             path="/edit"
             render={(props) => (
-              <EditContact {...props} updateContactHandler={updateContactHandler} />
+              <EditContact
+                {...props}
+                updateContactHandler={updateContactHandler}
+              />
             )}
           />
           <Route
