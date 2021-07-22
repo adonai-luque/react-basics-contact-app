@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/react-basics-contact-app/static/css/main.1292eb2f.chunk.css",
-    "main.js": "/react-basics-contact-app/static/js/main.3ccd8823.chunk.js",
-    "main.js.map": "/react-basics-contact-app/static/js/main.3ccd8823.chunk.js.map",
+    "main.js": "/react-basics-contact-app/static/js/main.15101a7d.chunk.js",
+    "main.js.map": "/react-basics-contact-app/static/js/main.15101a7d.chunk.js.map",
     "runtime-main.js": "/react-basics-contact-app/static/js/runtime-main.38346a79.js",
     "runtime-main.js.map": "/react-basics-contact-app/static/js/runtime-main.38346a79.js.map",
-    "static/js/2.d8ebb05a.chunk.js": "/react-basics-contact-app/static/js/2.d8ebb05a.chunk.js",
-    "static/js/2.d8ebb05a.chunk.js.map": "/react-basics-contact-app/static/js/2.d8ebb05a.chunk.js.map",
+    "static/js/2.cd870a99.chunk.js": "/react-basics-contact-app/static/js/2.cd870a99.chunk.js",
+    "static/js/2.cd870a99.chunk.js.map": "/react-basics-contact-app/static/js/2.cd870a99.chunk.js.map",
     "index.html": "/react-basics-contact-app/index.html",
     "static/css/main.1292eb2f.chunk.css.map": "/react-basics-contact-app/static/css/main.1292eb2f.chunk.css.map",
-    "static/js/2.d8ebb05a.chunk.js.LICENSE.txt": "/react-basics-contact-app/static/js/2.d8ebb05a.chunk.js.LICENSE.txt",
+    "static/js/2.cd870a99.chunk.js.LICENSE.txt": "/react-basics-contact-app/static/js/2.cd870a99.chunk.js.LICENSE.txt",
     "static/media/user.35a9c90c.jpg": "/react-basics-contact-app/static/media/user.35a9c90c.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.38346a79.js",
-    "static/js/2.d8ebb05a.chunk.js",
+    "static/js/2.cd870a99.chunk.js",
     "static/css/main.1292eb2f.chunk.css",
-    "static/js/main.3ccd8823.chunk.js"
+    "static/js/main.15101a7d.chunk.js"
   ]
 }
