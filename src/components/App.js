@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { v4 } from "uuid";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import api from "../api/contacts";
 import "../stylesheets/App.css";
 import Header from "./Header";
@@ -50,7 +50,7 @@ export default function App() {
 
   return (
     <div className="ui container">
-      <Router>
+      <HashRouter basename='/'>
         <Header />
         <Switch>
           <Route
@@ -84,7 +84,8 @@ export default function App() {
             render={(props) => <ContactDetail {...props} />}
           />
         </Switch>
-      </Router>
+      </HashRouter>
     </div>
+
   );
 }
