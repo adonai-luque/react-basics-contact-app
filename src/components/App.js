@@ -10,20 +10,16 @@ import ContactList from "./ContactList";
 import ContactDetail from "./ContactDetail";
 
 export default function App() {
-  // const LOCAL_STORAGE_KEY = "contacts";
   const [contacts, setContacts] = useState([]);
 
   async function retrieveContacts() {
     const response = await api.get("/contacts");
-    return response.data;
+    // const retrievedContacts = await response.data;
+    if (response.data) setContacts(response.data)
   }
 
   useEffect(() => {
-    async function getAllContacts() {
-      const allContacts = await retrieveContacts();
-      if (allContacts) setContacts(allContacts);
-    }
-    getAllContacts();
+    retrieveContacts();
   }, []);
 
   async function addContactHandler(newContact) {
